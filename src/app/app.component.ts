@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AdminService } from './servicios/admin.service';
 import { WorkExperience } from './models/cv.model';
+import { CommonModule } from '@angular/common'; // Agrega esto
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './app.html'
 })
 export class AppComponent {

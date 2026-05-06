@@ -1,12 +1,24 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms'; // Importante para ngModel
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [FormsModule], // Asegúrate de que FormsModule esté aquí
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('cv-admin-panel');
+  // 1. Declarar el objeto que usa el formulario
+  newWork = {
+    company: '',
+    role: '',
+    accomplishments: ''
+  };
+
+  // 2. Declarar la función que llama el botón
+  guardarTrabajo() {
+    console.log('Guardando...', this.newWork);
+    // Aquí iría tu lógica de Firebase que hicimos antes
+  }
 }

@@ -7,9 +7,12 @@ import { environment } from './environments/environment';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }),
+    // Cambia eventCoalescing a true (ya lo tienes) y añade runCoalescing
+    provideZoneChangeDetection({ 
+      eventCoalescing: true, 
+      runCoalescing: true 
+    }),
     provideRouter(routes),
-    // Asegúrate de que estén sueltos en el arreglo de providers
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore())
   ]

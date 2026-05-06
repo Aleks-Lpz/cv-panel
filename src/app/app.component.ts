@@ -19,8 +19,6 @@ export class AppComponent {
     accomplishments: ''
   };
 
-  // COMENTAMOS EL CONSTRUCTOR Y EL MÉTODO PARA PROBAR SI APARECE EL FORMULARIO
-  /*
   constructor(private adminService: AdminService) {}
 
   async guardarTrabajo() {
@@ -31,11 +29,5 @@ export class AppComponent {
       console.error('Error al guardar:', error);
     }
   }
-  */
 
-  // Agregamos una función vacía para que el HTML no de error al buscar "guardarTrabajo"
-  async guardarTrabajo() {
-    console.log('Prueba de funcionamiento: ', this.newWork);
-    alert('Modo de prueba: Revisa la consola');
-  }
 }

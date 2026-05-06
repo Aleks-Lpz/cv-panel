@@ -7,7 +7,7 @@ import { WorkExperience } from './models/cv.model';
   selector: 'app-root',
   standalone: true,
   imports: [FormsModule],
-  templateUrl: './app.component.html'
+  templateUrl: './app.html'
 })
 export class AppComponent {
   newWork: WorkExperience = {

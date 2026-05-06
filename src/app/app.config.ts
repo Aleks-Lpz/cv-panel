@@ -7,7 +7,7 @@ import { environment } from './environments/environment';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    // Usamos esta configuración para evitar que Firebase rompa la zona de Angular
+    // Cambiamos a esta configuración que es la más estable para Firebase
     provideZoneChangeDetection({ 
       eventCoalescing: true,
       runCoalescing: true 

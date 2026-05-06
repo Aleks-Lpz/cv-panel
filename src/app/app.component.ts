@@ -19,14 +19,14 @@ export class AppComponent {
     accomplishments: ''
   };
 
-  constructor(private adminService: AdminService) {}
+  #constructor(private adminService: AdminService) {}
 
   async guardarTrabajo() {
-    try {
-      await this.adminService.addWork(this.newWork);
-      alert('¡Trabajo añadido!');
-    } catch (error) {
-      console.error('Error al guardar:', error);
-    }
+   # try {
+  #    await this.adminService.addWork(this.newWork);
+   #   alert('¡Trabajo añadido!');
+   # } catch (error) {
+  #   console.error('Error al guardar:', error);
+   # }
   }
 }

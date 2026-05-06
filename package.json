@@ -31,4 +31,12 @@
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"
   }
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --configuration production",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "render-build": "npm install --legacy-peer-deps && npm run build"
+  }
 }

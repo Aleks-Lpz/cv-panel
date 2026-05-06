@@ -1,1 +1,85 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-green: #1b4332; /* Verde bosque profundo */
+  --accent-green: #40916c;
+  --bg-light: #f8f9fa;
+  --white: #ffffff;
+}
+
+body {
+  background-color: var(--bg-light);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  min-height: 100vh;
+}
+
+/* Sidebar Estético */
+.sidebar {
+  background-color: var(--primary-green);
+  color: var(--white);
+  padding: 20px;
+}
+
+.sidebar h2 { font-size: 1.2rem; margin-bottom: 2rem; border-bottom: 1px solid #ffffff33; padding-bottom: 10px; }
+
+.nav-btn {
+  width: 100%;
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 12px;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  transition: 0.3s;
+}
+
+.nav-btn.active, .nav-btn:hover {
+  background-color: var(--accent-green);
+}
+
+/* Panel Central */
+.content { padding: 30px; }
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+input, textarea, select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.btn-save {
+  background-color: var(--primary-green);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-save:hover { background-color: var(--accent-green); }
+
+/* Tabla de datos */
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { text-align: left; background: #eee; padding: 12px; }
+td { padding: 12px; border-bottom: 1px solid #eee; }

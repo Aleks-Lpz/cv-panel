@@ -1,1 +1,68 @@
-<h1>Hola Mundo</h1>
+<div class="admin-container">
+  <h1>Panel de Administración - CV</h1>
+  <p>Agrega una nueva experiencia laboral a tu trayectoria.</p>
+
+  <form (ngSubmit)="guardarTrabajo()" #workForm="ngForm" class="work-form">
+    
+    <div class="form-group">
+      <label for="company">Empresa:</label>
+      <input 
+        type="text" 
+        id="company" 
+        name="company" 
+        [(ngModel)]="newWork.company" 
+        required 
+        placeholder="Ej: Google, Freelance...">
+    </div>
+
+    <div class="form-group">
+      <label for="position">Puesto:</label>
+      <input 
+        type="text" 
+        id="position" 
+        name="position" 
+        [(ngModel)]="newWork.position" 
+        required 
+        placeholder="Ej: Software Engineer">
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="startDate">Fecha Inicio:</label>
+        <input 
+          type="text" 
+          id="startDate" 
+          name="startDate" 
+          [(ngModel)]="newWork.startDate" 
+          required 
+          placeholder="Ej: Enero 2024">
+      </div>
+
+      <div class="form-group">
+        <label for="endDate">Fecha Fin:</label>
+        <input 
+          type="text" 
+          id="endDate" 
+          name="endDate" 
+          [(ngModel)]="newWork.endDate" 
+          required 
+          placeholder="Ej: Actualidad">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="accomplishments">Logros y Responsabilidades:</label>
+      <textarea 
+        id="accomplishments" 
+        name="accomplishments" 
+        [(ngModel)]="newWork.accomplishments" 
+        required 
+        rows="5"
+        placeholder="Describe tus funciones y éxitos..."></textarea>
+    </div>
+
+    <button type="submit" [disabled]="!workForm.form.valid" class="btn-save">
+      Guardar Experiencia
+    </button>
+  </form>
+</div>

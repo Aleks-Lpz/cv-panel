@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common'; // Agregado para soporte de directivas
 import { AdminService } from './servicios/admin.service';
 import { WorkExperience } from './models/cv.model';
-import { CommonModule } from '@angular/common'; // Agrega esto
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule], // Ambos deben estar aquí
   templateUrl: './app.html'
 })
 export class AppComponent {
@@ -22,7 +22,11 @@ export class AppComponent {
   constructor(private adminService: AdminService) {}
 
   async guardarTrabajo() {
-    await this.adminService.addWork(this.newWork);
-    alert('¡Trabajo añadido! Revisa tu CV en GitHub Pages.');
+    try {
+      await this.adminService.addWork(this.newWork);
+      alert('¡Trabajo añadido!');
+    } catch (error) {
+      console.error('Error al guardar:', error);
+    }
   }
 }

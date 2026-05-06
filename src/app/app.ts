@@ -11,10 +11,12 @@ import { FormsModule } from '@angular/forms'; // Importante para ngModel
 export class App {
   // 1. Declarar el objeto que usa el formulario
   newWork = {
-    company: '',
-    role: '',
-    accomplishments: ''
-  };
+      company: '',
+      position: '',      // Cambiado de 'role' a 'position' para que coincida con tu HTML
+      startDate: '',     // Faltaba
+      endDate: '',       // Faltaba
+      accomplishments: ''
+    };
 
   // 2. Declarar la función que llama el botón
   guardarTrabajo() {

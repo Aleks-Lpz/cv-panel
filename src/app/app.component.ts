@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from './servicios/admin.service';
+import { FormsModule } from '@angular/forms'; // <--- IMPORTANTE
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
-  styleUrls: ['./app.css']
+  standalone: true, // Asegúrate de que esto esté presente
+  imports: [FormsModule, CommonModule], // <--- AÑADE ESTO AQUÍ
+  styleUrls: ['./app.scss']
 })
 export class AppComponent implements OnInit {
   colecciones = ['certificates', 'education', 'header', 'interests', 'languages', 'skills', 'work-experience'];
